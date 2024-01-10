@@ -7,9 +7,10 @@ const tileCount = 16;
 
 let tiles = [];
 
-//Sety to show puzzle image first and shuffle after 2secs
+
 setGame();
 
+//Function to show puzzle image and shuffle after 2 seconds
 function setGame(){
     tiles = createImageTiles();
     tiles.forEach(tile => container.appendChild(tile))
@@ -40,3 +41,9 @@ function shuffle(array){
     }
     return array;
 }
+
+// Drag event to drag tiles to match
+container.addEventListener('dragstart', e => {
+    console.log(e)
+})
+
