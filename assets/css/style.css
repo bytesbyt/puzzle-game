@@ -29,7 +29,7 @@ ul {
     grid-template-columns: repeat(4,1fr);
 }
 
-/* Style puzzle pieces */
+/* Style tiles */
 li {
     width: 100px;
     height: 100px;
@@ -136,6 +136,10 @@ li {
     background-position-y: -300px;
 }
 
+/* --------- Media queries */
 
+@media (max-width: 414px) {
+   
+}
 
 
