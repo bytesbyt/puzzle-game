@@ -139,6 +139,95 @@ li {
 /* --------- Media queries */
 
 @media (max-width: 414px) {
+
+    /* Style tiles */
+li {
+    width: 80px;
+    height: 80px;
+    color: #fff;
+    background: url("https://picsum.photos/320")
+}
+
+.list0 {
+    background-position-x: 0px;
+    background-position-y: 0px;
+}
+
+.list1 {
+    background-position-x: -80px;
+    background-position-y: 0px;
+}
+
+.list2 {
+    background-position-x: -160px;
+    background-position-y: 0px;
+}
+
+.list3 {
+    background-position-x: -240px;
+    background-position-y: 0px;
+}
+
+.list4 {
+    background-position-x: 0px;
+    background-position-y: -100px;
+}
+
+.list5 {
+    background-position-x: -80px;
+    background-position-y: -80px;
+}
+
+.list6 {
+    background-position-x: -160px;
+    background-position-y: -80px;
+}
+
+.list7 {
+    background-position-x: -240px;
+    background-position-y: -80px;
+}
+
+.list8 {
+    background-position-x: 0px;
+    background-position-y: -160px;
+}
+
+
+.list9 {
+    background-position-x: -80px;
+    background-position-y: -160px;
+}
+
+.list10 {
+    background-position-x: -160px;
+    background-position-y: -160px;
+}
+
+.list11 {
+    background-position-x: -240px;
+    background-position-y: -160px;
+}
+
+.list12 {
+    background-position-x: 0px;
+    background-position-y: -240px;
+}
+
+.list13 {
+    background-position-x: -80px;
+    background-position-y: -240px;
+}
+
+.list14 {
+    background-position-x: -160px;
+    background-position-y: -240px;
+}
+
+.list15 {
+    background-position-x: -240px;
+    background-position-y: -240px;
+}
    
 }
 
