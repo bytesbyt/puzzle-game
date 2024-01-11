@@ -50,6 +50,17 @@ function shuffle(array){
     }
     return array;
 }
+//Function to check status (li and index) of dropped tile to complete the game
+
+function checkStatus(){
+    const currentList = [...container.children];
+    //returns number of unmatched li and index
+    const unMatchedList = currentList.filter((child, index) => Number(child.getAttribute("data-index")) !== index)
+    if(unMatchedList.length === 0){
+        // game finish
+        
+    }
+}
 
 // Drag event to ul to drag tiles
 container.addEventListener('dragstart', e => {
@@ -83,5 +94,8 @@ container.addEventListener('drop', e => {
         dragged.index > droppedIndex ? obj.before(dragged.el) : obj.after(dragged.el)
         isLast ? originPlace.after(obj) : originPlace.before(obj)
     }
+    //checks status every time the tile dropped
+    checkStatus();
+
 })
 
