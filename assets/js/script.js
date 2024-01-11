@@ -42,17 +42,17 @@ function setGame(){
     container.innerHTML = "";
     gameText.style.display = 'none';
     clearInterval(timeInterval);
-    // Time count
-    timeInterval = setInterval(() => {
-        playTime.innerText = time;
-        time++;
-    }, 1000)
-
+    
     tiles = createImageTiles();
     tiles.forEach(tile => container.appendChild(tile))
     setTimeout(() => {
         container.innerHTML = "";
         shuffle(tiles).forEach(tile => container.appendChild(tile))
+        // Time count
+        timeInterval = setInterval(() => {
+            playTime.innerText = time;
+            time++;
+        }, 1000)
     }, 3000)
 }
  
