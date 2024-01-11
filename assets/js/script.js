@@ -14,8 +14,6 @@ const dragged = {
     index: null,
 }
 
-setGame();
-
 //Function to show puzzle image and shuffle after 2 seconds
 function setGame(){
     tiles = createImageTiles();
@@ -58,7 +56,7 @@ function checkStatus(){
     const unMatchedList = currentList.filter((child, index) => Number(child.getAttribute("data-index")) !== index)
     if(unMatchedList.length === 0){
         // game finish
-        
+
     }
 }
 
@@ -99,3 +97,7 @@ container.addEventListener('drop', e => {
 
 })
 
+// Add event to start the game when start button is clicked
+startButton.addEventListener('click', () => {
+    setGame()
+})
