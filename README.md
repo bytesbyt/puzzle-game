@@ -14,14 +14,14 @@ The site will be targeted toward people who wants to improve their brain muscles
 
   - Featured at the top of the page, the Puzzle Game heading is easy to see for the user. Upon viewing the page, the user will be able to see the name of the game.
 
-![Logo](media/love_maths_logo.png)
+![Logo](assets/images/heading.png)
 
 - __The Game Area__
 
   - This section will allow the user to play the maths game. The user will be able to easily see icons for addition,  subtraction, multiplication, and division games.
   - The user will be able to select the type of maths game they will be playing by clicking on the different icons. 
 
-![Game](media/love_maths_icons.png)
+![Game](assets/images/time_count.png)
 
 - __The Question section__
 
