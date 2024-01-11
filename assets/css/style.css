@@ -14,10 +14,16 @@
     align-items: center;
     flex-direction: column;
 }
+/* Style heading font */
+.heading {
+    font-size: 2rem;
+    margin-top: 2rem;
+    color: var(--charcoal);
+}
 /* Style play-time font */
 .play-time {
-    font-size: 3rem;
-    margin-top: 2rem;
+    font-size: 2rem;
+    margin-top: 1rem;
     color: var(--charcoal);
 }
 /* Style puzzle image area and orientation */
