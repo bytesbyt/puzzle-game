@@ -28,13 +28,13 @@ The site will be targeted toward people who wants to improve their brain muscles
   - The question section is where the user will be able to see the elementary arithmetic question to answer as part of the game. The user will be able answer the questions in the answer box provide
   - The user will be able to submit their answer and a pop-up will make it known to the user if they answered correctly. 
 
-![Question](media/love_maths_question.png)
+![Question](assets/images/puzzle.png)
 
 - __The Score Area__
 
   - This section will allow the user to see exactly how many correct and incorrect answers they have provided. 
 
-![score](media/love_maths_answer.png)
+![score](assets/images/start_button.png)
 
 For some/all of your features, you may choose to reference the specific project files that implement them.
 
