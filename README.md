@@ -36,6 +36,12 @@ The site will be targeted toward people who wants to improve their brain muscles
 
 ![score](assets/images/start_button.png)
 
+- __The Score Area__
+
+  - This section will allow the user to see exactly how many correct and incorrect answers they have provided. 
+
+![score](assets/images/completed.png)
+
 For some/all of your features, you may choose to reference the specific project files that implement them.
 
 In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
