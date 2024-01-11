@@ -14,8 +14,36 @@ const dragged = {
     index: null,
 }
 
-//Function to show puzzle image and shuffle after 2 seconds
+//Variable to stop dragstart when the game is finished
+let isPlaying = false;
+//Variable for time count
+let timeInterval = null;
+let time = 0;
+
+//Function to check status (li and index) of dropped tile to complete the game
+
+function checkStatus(){
+    const currentList = [...container.children];
+    //returns number of unmatched li and index
+    const unMatchedList = currentList.filter((child, index) => Number(child.getAttribute("data-index")) !== index)
+     //Finish the game when there is 0 unmatched list
+    if (unMatchedList.length === 0){
+       gameText.style.display = "block";
+       isPlaying = false;
+    }
+}
+
+//Function to start the game
 function setGame(){
+    isPlaying = true;
+    container.innerHTML = "";
+    
+    // Time count
+    timeInterval = setInterval(() => {
+        playTime.innerText = time;
+        time++;
+    },1000)
+
     tiles = createImageTiles();
     tiles.forEach(tile => container.appendChild(tile))
     setTimeout(() => {
@@ -48,20 +76,10 @@ function shuffle(array){
     }
     return array;
 }
-//Function to check status (li and index) of dropped tile to complete the game
-
-function checkStatus(){
-    const currentList = [...container.children];
-    //returns number of unmatched li and index
-    const unMatchedList = currentList.filter((child, index) => Number(child.getAttribute("data-index")) !== index)
-    if(unMatchedList.length === 0){
-        // game finish
-
-    }
-}
 
 // Drag event to ul to drag tiles
 container.addEventListener('dragstart', e => {
+    if (!isPlaying) return;
     const obj = e.target;
     dragged.el = obj;
     dragged.class = obj.className;
@@ -75,6 +93,7 @@ container.addEventListener('dragover', e => {
 })
 // Drop event to ul to drop tiles
 container.addEventListener('drop', e => {
+    if (!isPlaying) return;
     const obj = e.target;
 
     //Get dropped index number of the tile if object's class name is different from the start
