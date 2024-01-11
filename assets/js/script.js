@@ -53,9 +53,10 @@ function shuffle(array){
 
 // Drag event to ul to drag tiles
 container.addEventListener('dragstart', e => {
-    const obj = e.target
+    const obj = e.target;
     dragged.el = obj;
     dragged.class = obj.className;
+    //Get dragged index number of the tile
     dragged.index = [...obj.parentNode.children].indexOf(obj);
 })
 // Dragover event to ul to overlay tiles
@@ -65,6 +66,22 @@ container.addEventListener('dragover', e => {
 })
 // Drop event to ul to drop tiles
 container.addEventListener('drop', e => {
-    //console.log('dropped')
+    const obj = e.target;
+
+    //Get dropped index number of the tile if object's class name is different from the start
+    if (obj.className !== dragged.class){
+        let originPlace;
+        let isLast = false;
+
+        if(dragged.el.nextSibling){
+            originPlace = dragged.el.nextSibling
+        } else {
+            originPlace = dragged.el.previousSibling
+            isLast = true;
+        }
+        const droppedIndex = [...obj.parentNode.children].indexOf(obj);
+        dragged.index > droppedIndex ? obj.before(dragged.el) : obj.after(dragged.el)
+        isLast ? originPlace.after(obj) : originPlace.before(obj)
+    }
 })
 
