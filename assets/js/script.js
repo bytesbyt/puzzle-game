@@ -30,25 +30,30 @@ function checkStatus(){
     if (unMatchedList.length === 0){
        gameText.style.display = "block";
        isPlaying = false;
+       //Stop time count when complete
+       clearInterval(timeInterval);
     }
 }
 
 //Function to start the game
 function setGame(){
     isPlaying = true;
+    time = 0 ;
     container.innerHTML = "";
+    gameText.style.display = 'none';
+    clearInterval(timeInterval);
     // Time count
     timeInterval = setInterval(() => {
         playTime.innerText = time;
         time++;
-    },1000)
+    }, 1000)
 
     tiles = createImageTiles();
     tiles.forEach(tile => container.appendChild(tile))
     setTimeout(() => {
         container.innerHTML = "";
         shuffle(tiles).forEach(tile => container.appendChild(tile))
-    },2000)
+    }, 3000)
 }
  
 //Function to create image tiles
