@@ -44,8 +44,16 @@ function shuffle(array){
     return array;
 }
 
-// Drag event to drag tiles to match
+// Drag event to ul to drag tiles
 container.addEventListener('dragstart', e => {
     console.log(e)
+})
+// Dragover event to ul to overlay tiles
+container.addEventListener('dragover', e => {
+    e.preventDefault()
+})
+// Drop event to ul to drop tiles
+container.addEventListener('drop', e => {
+    console.log('dropped')
 })
 
