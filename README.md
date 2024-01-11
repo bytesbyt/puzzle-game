@@ -4,7 +4,7 @@ Puzzle Game is online puzzle site which provides infinate images for people to p
 
 The site will be targeted toward people who wants to improve their brain muscles and increase problem solving skills.
 
-![Responsice Mockup](media/love_maths_mockup.png)
+![Responsice Mockup](assets/images/puzzle_game_mockup.png)
 
 ## Features 
 
