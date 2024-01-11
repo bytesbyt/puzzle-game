@@ -1,3 +1,4 @@
+
 const container = document.querySelector(".image-container")
 const startButton = document.querySelector(".start-button")
 const gameText = document.querySelector(".game-text")
@@ -6,7 +7,12 @@ const playTime = document.querySelector(".play-time")
 const tileCount = 16;
 
 let tiles = [];
-
+//Variable to store data for dragged tiles
+const dragged = {
+    el: null,
+    class: null,
+    index: null,
+}
 
 setGame();
 
@@ -26,6 +32,7 @@ function createImageTiles(){
     Array(tileCount).fill().forEach( (_, i) => {
         const li = document.createElement("li");
         li.setAttribute('data-index', i)
+        // Dragevent
         li.setAttribute('draggable', 'true');
         li.classList.add(`list${i}`);
         tempArray.push(li)
@@ -46,14 +53,18 @@ function shuffle(array){
 
 // Drag event to ul to drag tiles
 container.addEventListener('dragstart', e => {
-    console.log(e)
+    const obj = e.target
+    dragged.el = obj;
+    dragged.class = obj.className;
+    dragged.index = [...obj.parentNode.children].indexOf(obj);
 })
 // Dragover event to ul to overlay tiles
 container.addEventListener('dragover', e => {
+    //Stop dragover when dropped
     e.preventDefault()
 })
 // Drop event to ul to drop tiles
 container.addEventListener('drop', e => {
-    console.log('dropped')
+    //console.log('dropped')
 })
 
