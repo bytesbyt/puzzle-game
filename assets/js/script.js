@@ -37,7 +37,6 @@ function checkStatus(){
 function setGame(){
     isPlaying = true;
     container.innerHTML = "";
-    
     // Time count
     timeInterval = setInterval(() => {
         playTime.innerText = time;
@@ -79,7 +78,7 @@ function shuffle(array){
 
 // Drag event to ul to drag tiles
 container.addEventListener('dragstart', e => {
-    if (!isPlaying) return;
+    if(!isPlaying) return;
     const obj = e.target;
     dragged.el = obj;
     dragged.class = obj.className;
@@ -93,7 +92,7 @@ container.addEventListener('dragover', e => {
 })
 // Drop event to ul to drop tiles
 container.addEventListener('drop', e => {
-    if (!isPlaying) return;
+    if(!isPlaying) return;
     const obj = e.target;
 
     //Get dropped index number of the tile if object's class name is different from the start
