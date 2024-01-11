@@ -19,12 +19,14 @@ function setGame(){
         shuffle(tiles).forEach(tile => container.appendChild(tile))
     },2000)
 }
-
+ 
+//Function to create image tiles
 function createImageTiles(){
     const tempArray = [];
     Array(tileCount).fill().forEach( (_, i) => {
         const li = document.createElement("li");
         li.setAttribute('data-index', i)
+        li.setAttribute('draggable', 'true');
         li.classList.add(`list${i}`);
         tempArray.push(li)
     })
