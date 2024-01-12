@@ -85,7 +85,7 @@ In the future I will implement a feature that allows the user to access the comp
 
 ### Unfixed Bugs
 
-The drag and drop event in Javascript does not work on touchscreen. If I have more time, this issue will be fixed.
+The drag and drop event in Javascript does not work on touchscreen. Touch event in Javascript will be implemented in the future.
 
 ## Deployment
 
