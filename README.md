@@ -49,7 +49,7 @@ The site will be targeted toward people who wants to improve their brain muscles
 
 ### Features Left to Implement
 
-In the future I will implement a feature that allows the user to access the completed image while the puzzle game is being played.
+In the future, a feature that allows the user to access the completed image while the puzzle game is being played will be implemented.
 
 ## Testing 
 
