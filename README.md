@@ -51,7 +51,8 @@ The site will be targeted toward people who wants to improve their brain muscles
 
 ## Testing 
 
-The drag and drop event in Javascript does not work on touchscreen devices.
+- Puzzle Game works in different browsers: Chrome, Firefox, Safari.
+- This page is responsive, looks good on all standard screen sizes usinf the devtool device toolbar.
 
 ### Validator Testing 
 
@@ -75,13 +76,14 @@ The drag and drop event in Javascript does not work on touchscreen devices.
 
 ![js](assets/images/js_validator.png)
 
-- Light House
+- Accessibility
+    - Chosen colors are easy yo read and accessible by running it through lighthouse in devtools.
 
 ![js](assets/images/lighthouse.png)
 
 ### Unfixed Bugs
 
-The drag and drop event in Javascript does not work on touchscreen. If I have more time, this bug will be fixed.
+The drag and drop event in Javascript does not work on touchscreen. If I have more time, this issue will be fixed.
 
 ## Deployment
 
