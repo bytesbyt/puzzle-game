@@ -49,8 +49,6 @@ The site will be targeted toward people who wants to improve their brain muscles
 
 ### Features Left to Implement
 
-- If I have more time I will make a seperate section that shows completed image next to the game area.
-
 ## Testing 
 
 The drag and drop event in Javascript does not work on touchscreen devices.
@@ -77,6 +75,10 @@ The drag and drop event in Javascript does not work on touchscreen devices.
 
 ![js](assets/images/js_validator.png)
 
+- Light House
+
+![js](assets/images/lighthouse.png)
+
 ### Unfixed Bugs
 
 The drag and drop event in Javascript does not work on touchscreen. If I have more time, this bug will be fixed.
@@ -92,7 +94,6 @@ The live link can be found here - https://bytesbyt.github.io/puzzle-game/
 
 
 ## Credits 
-
 
 ### Content 
 
