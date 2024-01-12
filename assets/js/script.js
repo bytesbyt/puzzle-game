@@ -2,10 +2,10 @@
  * Declare constants for DOM elements
  */
 
-const container = document.querySelector(".image-container")
-const startButton = document.querySelector(".start-button")
-const gameText = document.querySelector(".game-text")
-const playTime = document.querySelector(".play-time")
+const container = document.querySelector(".image-container");
+const startButton = document.querySelector(".start-button");
+const gameText = document.querySelector(".game-text");
+const playTime = document.querySelector(".play-time");
 
 //Number of tiles
 const tileCount = 16;
@@ -16,7 +16,7 @@ const dragged = {
     el: null,
     class: null,
     index: null,
-}
+};
 
 //Variable to stop dragstart when the game is finished
 let isPlaying = false;
@@ -28,7 +28,7 @@ let time = 0;
 function checkStatus(){
     const currentList = [...container.children];
     //returns number of unmatched li and index
-    const unMatchedList = currentList.filter((child, index) => Number(child.getAttribute("data-index")) !== index)
+    const unMatchedList = currentList.filter((child, index) => Number(child.getAttribute("data-index")) !== index);
      //Finish the game when there is 0 unmatched list
     if (unMatchedList.length === 0){
        gameText.style.display = "block";
@@ -49,16 +49,16 @@ function setGame(){
     clearInterval(timeInterval);
     
     tiles = createImageTiles();
-    tiles.forEach(tile => container.appendChild(tile))
+    tiles.forEach(tile => container.appendChild(tile));
     setTimeout(() => {
         container.innerHTML = "";
-        shuffle(tiles).forEach(tile => container.appendChild(tile))
+        shuffle(tiles).forEach(tile => container.appendChild(tile));
         // Time count
         timeInterval = setInterval(() => {
             playTime.innerText = time;
             time++;
-        }, 1000)
-    }, 3000)
+        }, 1000);
+    }, 3000);
 }
  
 //Function to create image tiles
@@ -66,12 +66,12 @@ function createImageTiles(){
     const tempArray = [];
     Array(tileCount).fill().forEach( (_, i) => {
         const li = document.createElement("li");
-        li.setAttribute('data-index', i)
+        li.setAttribute('data-index', i);
         // Dragevent
         li.setAttribute('draggable', 'true');
         li.classList.add(`list${i}`);
-        tempArray.push(li)
-    })
+        tempArray.push(li);
+    });
     return tempArray;
 }
 
@@ -80,7 +80,7 @@ function shuffle(array){
     let index = array.length -1;
     while(index > 0){
         const randomIndex = Math.floor(Math.random()*(index+1));
-        [array[index], array[randomIndex]] = [array[randomIndex], array[index]]
+        [array[index], array[randomIndex]] = [array[randomIndex], array[index]];
         index--;
     }
     return array;
@@ -97,12 +97,12 @@ container.addEventListener('dragstart', e => {
     dragged.class = obj.className;
     //Get dragged index number of the tile
     dragged.index = [...obj.parentNode.children].indexOf(obj);
-})
+});
 // Dragover event to ul to overlay tiles
 container.addEventListener('dragover', e => {
     //Stop dragover when dropped
-    e.preventDefault()
-})
+    e.preventDefault();
+});
 // Drop event to ul to drop tiles
 container.addEventListener('drop', e => {
     if(!isPlaying) return;
@@ -114,21 +114,21 @@ container.addEventListener('drop', e => {
         let isLast = false;
 
         if(dragged.el.nextSibling){
-            originPlace = dragged.el.nextSibling
+            originPlace = dragged.el.nextSibling;
         } else {
-            originPlace = dragged.el.previousSibling
+            originPlace = dragged.el.previousSibling;
             isLast = true;
         }
         const droppedIndex = [...obj.parentNode.children].indexOf(obj);
-        dragged.index > droppedIndex ? obj.before(dragged.el) : obj.after(dragged.el)
-        isLast ? originPlace.after(obj) : originPlace.before(obj)
+        dragged.index > droppedIndex ? obj.before(dragged.el) : obj.after(dragged.el);
+        isLast ? originPlace.after(obj) : originPlace.before(obj);
     }
     //checks status every time the tile dropped
     checkStatus();
 
-})
+});
 
 // Add event to start the game when start button is clicked
 startButton.addEventListener('click', () => {
-    setGame()
-})
+    setGame();
+});
