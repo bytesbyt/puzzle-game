@@ -1,8 +1,12 @@
+/**
+ * Declare constants for DOM elements
+ */
 
 const container = document.querySelector(".image-container")
 const startButton = document.querySelector(".start-button")
 const gameText = document.querySelector(".game-text")
 const playTime = document.querySelector(".play-time")
+
 //Number of tiles
 const tileCount = 16;
 
@@ -21,7 +25,6 @@ let timeInterval = null;
 let time = 0;
 
 //Function to check status (li and index) of dropped tile to complete the game
-
 function checkStatus(){
     const currentList = [...container.children];
     //returns number of unmatched li and index
@@ -34,7 +37,9 @@ function checkStatus(){
        clearInterval(timeInterval);
     }
 }
-
+/**
+ * Functions
+ */
 //Function to start the game
 function setGame(){
     isPlaying = true;
@@ -80,7 +85,10 @@ function shuffle(array){
     }
     return array;
 }
-
+/**
+ * Add event listener for 
+ * drag and drop
+ */
 // Drag event to ul to drag tiles
 container.addEventListener('dragstart', e => {
     if(!isPlaying) return;
